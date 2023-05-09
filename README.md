@@ -16,12 +16,6 @@ sudo apt update
 sudo apt install nginx
 ```
   
-## Replace default Nginx config to forward port 80 to 3000
-  
-```
-cp ./config/default /etc/nginx/sites-available/default
-```
-  
 ## Install nodejs
   
 ```
@@ -38,6 +32,7 @@ cd mindmatrix
 ## Install npm and all packages required by the project
   
 ```
+apt install npm
 npm install
 ```
   
@@ -52,6 +47,18 @@ nano server.js
 ```
 npm install -g pm2
 pm2 start server.js
+```
+  
+## Replace default Nginx config to forward port 80 to 3000
+  
+```
+cp ./config/default /etc/nginx/sites-available/default
+```
+
+## Restart Nginx server
+
+```
+sudo systemctl restart nginx
 ```
   
 # More Info
