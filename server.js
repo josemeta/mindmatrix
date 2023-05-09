@@ -5,7 +5,7 @@ const { Configuration, OpenAIApi } = openai;
 const path = require("path");
 
 const corsOptions = {
-  origin: 'http://mindmatrix.online', // Replace 'yourdomain.com' with your actual domain.
+  origin: 'http://yourdomain.com', // Replace 'yourdomain.com' with your actual domain.
   optionsSuccessStatus: 200,
 };
 
@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(corsOptions)); // Remove the duplicate line
 
-app.use(express.static("/"));
+app.use(express.static("./public"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));

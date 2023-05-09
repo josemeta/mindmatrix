@@ -114,7 +114,7 @@ async function submitQuestion() {
 
 async function fetchGPTResponse(userQuestion, selectedFigure) {
   console.log('Fetching GPT response for:', userQuestion, selectedFigure);
-  const url = 'https://mindmatrix.online/api/gpt';
+  const url = '/api/gpt';
 
   const data = {
     userQuestion: userQuestion,
